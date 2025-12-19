@@ -1,19 +1,25 @@
+## BMP-cli Viewer
+
 A small BMP image CLI viewer in the command line with no dependencies.
 This viewer parses the BMP file using the standard specifications.
 
-Compilation
+## Build
 ```bash
 g++ main.cpp color.cpp bmpReader.cpp -o bmp-viewer
 ```
 
-Usage :
+## Usage
 ```bash
 Usage : bmp-viewer
         bmp-viewer <input>
         bmp-viewer <input> --scale <scale-factor>
 ```
 
-Examples:
+## Video
+
+[![Watch the video](https://img.youtube.com/vi/IYEKbuRb4FY/maxresdefault.jpg)](https://youtu.be/IYEKbuRb4FY)
+
+## Illustrations:
 
 ![alt text](readme-images/example1.png "Example")
 
