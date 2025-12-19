@@ -12,3 +12,10 @@ Usage : bmp-viewer
         bmp-viewer <input>
         bmp-viewer <input> --scale <scale-factor>
 ```
+
+Examples:
+
+![alt text](readme-images/example1.png "Example")
+
+![alt text](readme-images/example2.png "Example")
+
