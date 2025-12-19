@@ -1,4 +1,4 @@
-A small BMP image CLI viewer in the command line with no dependancies.
+A small BMP image CLI viewer in the command line with no dependencies.
 This viewer parses the BMP file using the standard specifications.
 
 Compilation
