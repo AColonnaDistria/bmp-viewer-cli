@@ -11,7 +11,7 @@
                 "color.cpp",
                 "bmpReader.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "bmp-viewer"
             ],
             "options": {
                 "cwd": "${fileDirname}"

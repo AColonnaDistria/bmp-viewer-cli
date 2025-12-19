@@ -55,7 +55,7 @@ Image_BMP::Image_BMP(std::string filepath) {
 
     //std::cout << "width: " << width << ", height: " << height << "\n";
 
-    this->pixels.reserve(bWidth * bHeight);
+    this->pixels.resize(bWidth * bHeight);
 
     // jump to bitmap array
     int offset;

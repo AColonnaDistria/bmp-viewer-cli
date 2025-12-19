@@ -7,6 +7,7 @@ struct Color {
     char g;
     char b;
 
+    Color();
     Color(char a, char r, char g, char b);
     Color(char r, char g, char b);
 };

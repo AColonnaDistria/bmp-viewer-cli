@@ -1,6 +1,8 @@
 #include "common.hpp"
 #include "color.hpp"
 
+Color::Color() {}
+
 Color::Color(char a, char r, char g, char b) {
     this->a = a;
     this->r = r;

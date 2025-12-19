@@ -56,11 +56,45 @@ void drawPixel(Color color) {
     std::cout << "\033[" << std::to_string(nearestPaletteColor.second) << "m" << " " << "\033[0m";
 }
 
-int main() {
-    Image_BMP image("input.bmp");
+int main(int argc, char** argv) {
+    std::string input = "tests/input.bmp";
 
-    for (int y = 0; y < image.getWidth(); ++y) {
-        for (int x = 0; x < image.getHeight(); ++x) {
+    int target_width = 128;
+
+    if (argc > 1) {
+        if (std::string(argv[1]) == "--help") {
+            std::cout << "Usage : bmp-viewer" << std::endl;
+            std::cout << "      : bmp-viewer <input>" << std::endl;
+            std::cout << "      : bmp-viewer <input> --scale <scale-factor>" << std::endl;
+            std::cout << "\n";
+        }
+        else {
+            input = argv[1];
+        }   
+    }
+
+    Image_BMP image(input);
+    double ratio = (double)image.getHeight() / image.getWidth();
+    int target_height = (int)(target_width * ratio * 0.25);
+
+    int step_width = image.getWidth() / target_width;
+    int step_height = image.getHeight() / target_height;
+
+    step_width = std::max(1, image.getWidth() / target_width);
+    step_height = std::max(1, step_height);
+
+    if (argc > 3 && std::string(argv[2]) == "--scale") {
+        double scale = std::stod(argv[3]);
+        
+        target_width = (int) ((double)image.getWidth() / scale);
+        target_height = (int) ((double)image.getHeight() / scale * 0.5);
+        
+        step_width = image.getWidth() / target_width;
+        step_height = image.getHeight() / target_height;
+    }
+
+    for (int y = 0; y < image.getHeight(); y += step_height) {
+        for (int x = 0; x < image.getWidth(); x += step_width) {
             drawPixel(image.getPixel(x, y));
         }
         std::cout << "\n";
